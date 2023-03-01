@@ -13,16 +13,23 @@ const LupaPassword = () => {
 
 
   const kirimResetEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if(!email) {
       setError ('Email dibutuhkan untuk mengirim link reset')
     } else {
       axios.put('http://localhost:5000/forgotpassword', {email:email})
       .then(res => { 
         setEmail('')
-        setAllert('Link Reset Email telah dikirim ke email anda')
+        setAllert('Link reset password dikirim ke email anda')
         setTimeout(() =>{
           setAllert('')
+        }, 3000)
+      })
+      .catch(function (error) {
+        //Handle error bila email yg dimasukan tidak terdaftar
+        setError('Email tidak terdaftar')
+        setTimeout(() =>{
+          setError('')
         }, 3000)
       })
     }
