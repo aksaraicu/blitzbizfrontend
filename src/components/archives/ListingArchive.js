@@ -66,11 +66,11 @@ const ListingArchive = () => {
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">{item.nama_listing}</h2>
-            {/* <div
+            <div
               dangerouslySetInnerHTML={{
                 __html: item.deskripsi_listing.substring(0, 50),
               }}
-            ></div> */}
+            ></div>
             <div className="card-actions">
               <Link to={`/listings/${item.id}`}>
                 <button className="btn btn-primary btn-md rounded-lg">

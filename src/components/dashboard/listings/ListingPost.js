@@ -42,9 +42,12 @@ const ListingPost = () => {
           </div>
           <div className="card-body lg:w-1/2">
             <h2 className="card-title">{item.nama_listing}</h2>
-            <div>
-              {item.slogan_listing}
-            </div>
+            <div
+              className="my-10"
+              dangerouslySetInnerHTML={{
+                __html: item.deskripsi_listing.substring(0, 550),
+              }}
+            ></div>
             <div className="card-actions justify-end">
               <p className="text-xl">
                 <NumericFormat

@@ -19,8 +19,9 @@ import ListingSingle from "./components/singles/ListingSingle";
 import ListingArchive from "./components/archives/ListingArchive";
 import Register from "./components/main/Register";
 import Login from "./components/main/Login";
+import LupaPassword from "./components/main/LupaPassword"
+import ResetPassword from "./components/main/ResetPassword"
 import axios from "axios";
-import Dashboard from "./components/dashboard/Dashboard";
 
 axios.defaults.baseURL = "http://localhost:5000";
 
@@ -32,11 +33,9 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
-
         <Route path="/login" element={<Login />} />
 
-        <Route path="/blog-dashboard" element={<PostList />} />
+        <Route path="/posts" element={<PostList />} />
 
         <Route path="/blog" element={<PostArchive />} />
 
@@ -74,18 +73,14 @@ function App() {
         />
 
         <Route path="/listings/:id" element={<ListingSingle />} />
-
         <Route path="tambah-post" element={<TambahPost />} />
-
         <Route path="edit-post/:id" element={<EditPost />} />
-
         <Route path="blog/:id" element={<PostSingle />} />
-
         <Route path="/users" element={<UserList />} />
-
         <Route path="edit-user/:id" element={<EditUser />} />
-
         <Route path="tambah-user" element={<TambahUser />} />
+        <Route path="/forgot-password" element={<LupaPassword />} />
+        <Route path="/resetpassword/:token" element={<ResetPassword />} />
       </Routes>
 
       <Footer />
