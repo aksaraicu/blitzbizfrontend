@@ -16,7 +16,7 @@ const EditUser = () => {
   const { id } = useParams();
 
   const getUserById = async () => {
-    const response = await axios.get(`http://localhost:5000/users/${id}`);
+    const response = await axios.get(`users/${id}`);
     setName(response.data.nama_lengkap_user);
     setUserName(response.data.nama_user);
     setEmail(response.data.email_user);
@@ -47,7 +47,7 @@ const EditUser = () => {
     console.log(formData);
 
     try {
-      await axios.patch(`http://localhost:5000/users/${id}`, formData, {
+      await axios.patch(`users/${id}`, formData, {
         headers: {
           "Content-type": "multipart/form-data",
           authorization: `Bearer ${window.localStorage.token}`,

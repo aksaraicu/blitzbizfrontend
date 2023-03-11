@@ -74,7 +74,7 @@ const TambahListings = () => {
     formData.append("harga_listing", number.harga_listing);
 
     try {
-      await axios.post("http://localhost:5000/listings", formData, {
+      await axios.post("listings", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

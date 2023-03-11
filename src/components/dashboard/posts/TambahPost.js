@@ -59,7 +59,7 @@ const TambahPost = () => {
     formData.append("isi", isi);
     formData.append("gambar", gambar);
     try {
-      await axios.post("http://localhost:5000/posts", formData, {
+      await axios.post("posts", formData, {
         headers: {
           "Content-type": "multipart/form-data",
         },

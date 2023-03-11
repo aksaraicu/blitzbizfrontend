@@ -25,7 +25,7 @@ const ListingArchive = () => {
 
   const getData = async () => {
     const res = await axios.get(
-      `http://localhost:5000/listings?cari=${kataKunci}&halaman=${halaman}&limit=${limit}`
+      `listings?cari=${kataKunci}&halaman=${halaman}&limit=${limit}`
     );
     setData(res.data.hasil);
     setTotalHalaman(res.data.totalHalaman);

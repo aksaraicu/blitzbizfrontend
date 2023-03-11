@@ -32,7 +32,7 @@ const TambahPost = () => {
     formData.append("verifikasi_user", verifikasi_user);
 
     try {
-      await axios.post("http://localhost:5000/users", formData, {
+      await axios.post("users", formData, {
         headers: {
           "Content-type": "multipart/form-data",
         },

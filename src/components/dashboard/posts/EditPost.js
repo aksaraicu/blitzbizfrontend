@@ -28,7 +28,7 @@ const EditPost = () => {
   };
 
   const getPostById = async () => {
-    const response = await axios.get(`http://localhost:5000/posts/${id}`);
+    const response = await axios.get(`posts/${id}`);
     setJudul(response.data.judul);
     setIsi(response.data.isi);
     setKategori(response.data.kategori);
@@ -52,7 +52,7 @@ const EditPost = () => {
     formData.append("gambar", gambar);
 
     try {
-      await axios.patch(`http://localhost:5000/posts/${id}`, formData, {
+      await axios.patch(`posts/${id}`, formData, {
         headers: {
           "Content-type": "multipart/form-data",
           authorization: `Bearer ${window.localStorage.token}`,

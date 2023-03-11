@@ -14,7 +14,7 @@ const UserList = () => {
 
   const getUsers = async () => {
     const response = await axios.get(
-      `http://localhost:5000/users?cari=${kataKunci}&halaman=${halaman}&limit=${limit}`
+      `users?cari=${kataKunci}&halaman=${halaman}&limit=${limit}`
     );
 
     setUsers(response.data.hasil);
@@ -25,7 +25,7 @@ const UserList = () => {
 
   const hapusUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${id}`);
+      await axios.delete(`users/${id}`);
       getUsers();
     } catch (error) {
       console.error(error);

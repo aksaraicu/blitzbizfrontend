@@ -23,7 +23,7 @@ import LupaPassword from "./components/main/LupaPassword.js"
 import ResetPassword from "./components/main/ResetPassword.js"
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "http://endpoint.blitzbiz.id/";
 
 function App() {
   return (

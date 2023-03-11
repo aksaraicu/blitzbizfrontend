@@ -16,7 +16,7 @@ const ResetPassword = () => {
       password: password,
       token: token,
     }
-     axios.put('http://localhost:5000/resetpassword', data)
+     axios.put('resetpassword', data)
       .then(res => {
         setPassword('')
         setConfPassword('')

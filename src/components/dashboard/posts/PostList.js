@@ -15,7 +15,7 @@ const PostList = () => {
   const getPosts = async (token) => {
     const response = await axios
       .get(
-        `http://localhost:5000/postswithrole?cari=${kataKunci}&halaman=${halaman}&limit=${limit}`,
+        `postswithrole?cari=${kataKunci}&halaman=${halaman}&limit=${limit}`,
         {
           cancelToken: token,
         }
@@ -34,7 +34,7 @@ const PostList = () => {
 
   const hapusPost = async (postId) => {
     try {
-      await axios.delete(`http://localhost:5000/posts/${postId}`);
+      await axios.delete(`posts/${postId}`);
       getPosts();
     } catch (error) {
       console.error(error);

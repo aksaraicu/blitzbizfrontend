@@ -13,7 +13,7 @@ const ListingPost = () => {
 
   const getData = async () => {
     const res = await axios.get(
-      `http://localhost:5000/listings?halaman=${halaman}&limit=${limit}`
+      `listings?halaman=${halaman}&limit=${limit}`
     );
     console.log(res.data.hasil);
     setData(res.data.hasil);

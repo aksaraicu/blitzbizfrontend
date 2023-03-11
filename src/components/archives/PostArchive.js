@@ -14,7 +14,7 @@ const PostArchive = () => {
 
   const getPosts = async () => {
     const response = await axios.get(
-      `http://localhost:5000/posts?cari=${kataKunci}&halaman=${halaman}&limit=${limit}`
+      `posts?cari=${kataKunci}&halaman=${halaman}&limit=${limit}`
     );
 
     setPosts(response.data.hasil);

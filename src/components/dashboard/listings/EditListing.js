@@ -27,7 +27,7 @@ const EditListing = () => {
   const { id } = useParams();
 
   const fetchPostById = async () => {
-    const res = await axios.get(`http://localhost:5000/listings/${id}`);
+    const res = await axios.get(`listings/${id}`);
     console.log(res.data);
     setDetails((prev) => {
       return {
@@ -107,7 +107,7 @@ const EditListing = () => {
     formData.append("harga_listing", number.harga_listing);
 
     try {
-      await axios.patch(`http://localhost:5000/listings/${id}`, formData, {
+      await axios.patch(`listings/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
